@@ -10,7 +10,6 @@ export const App = () => {
 		handleSubmit,
 		formState: { errors, isValid },
 		reset,
-		setFocus,
 	} = useForm({
 		defaultValues: {
 			email: '',
@@ -47,12 +46,7 @@ export const App = () => {
 					{...register('repeatPassword')}
 				/>
 				{repeatPasswordError && (<div className={styles.error}>{repeatPasswordError}</div>)}
-				<button
-					ref={submitButtonRef}
-					disabled={!isValid}
-				>
-					Зарегистрироваться
-				</button>
+				<button	ref={submitButtonRef} disabled={!isValid}>Зарегистрироваться</button>
 			</form>
 		</div>
 	);
